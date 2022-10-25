@@ -1,0 +1,156 @@
+@import "../../styles/styles.scss";
+
+.main {
+    @include Flex_Column_Center;
+    width: 100%;
+    .bg {
+        background-color: #232627;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+    }
+    .poke_info {
+        z-index: 1;
+        @include Flex_Column_Center_Center;
+        color: white;
+        width: 70%;
+        .poke_info_back {
+            margin: 0;
+            margin-top: 15px;
+            margin-left: 10px;
+            width: 95%;
+            .back_arrow {
+                font-size: 28px;
+            }
+        }
+        .poke_info_header {
+            @include Flex_Column_Center_Center;
+            .poke_info_name {
+                &::first-letter {
+                    text-transform: uppercase;
+                }
+            }
+            .poke_info_id {
+                margin: 0;
+            }
+        }
+        .poke_info_sprite {
+            width: 350px;
+        }
+        .poke_info_body_type {
+            @include Flex_SpaceEvenly_Center;
+            width: 200px;
+            margin: 30px 0px;
+            .type {
+                padding: 5px 10px;
+                border-radius: 8px;
+                margin: 0px 10px;
+                &::first-letter {
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .poke_info_stats {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            width: 50%;
+            .poke_info_stats_name {
+                @include Flex_Column_Center_FlexStart;
+            }
+            .poke_info_stats_progressbar {
+                @include Flex_Column_Center_Center;
+                p {
+                    @include Flex_Center_Center;
+                }
+            }
+        }
+        .poke_info_body {
+            border-radius: 15px;
+            padding: 20px;
+            width: 65%;
+            background-color: #3c4144;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .ability {
+                h5 {
+                    font-size: 16px;
+                    margin: 0;
+                }
+                ._ability {
+                    display: flex;
+                    p {
+                        font-size: 15px;
+                        padding-right: 8px;
+                        &::first-letter {
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+            .capture_rate {
+                h5 {
+                    font-size: 16px;
+                    margin: 0;
+                }
+            }
+            .habitat {
+                h5 {
+                    font-size: 16px;
+                    margin: 0;
+                }
+                p {
+                    &::first-letter {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        width: 100%;
+        .poke_info {
+            width: 100%;
+            .poke_info_sprite {
+                width: 70%;
+            }
+            .poke_info_body {
+                @include Flex_Column_Center_Center;
+                .ability {
+                    text-align: center;
+                    h5 {
+                    }
+                    ._ability {
+                        p {
+                        }
+                    }
+                }
+                .capture_rate {
+                    text-align: center;
+                    h5 {
+                    }
+                }
+                .habitat {
+                    text-align: center;
+                    h5 {
+                    }
+                    p {
+                    }
+                }
+            }
+            .poke_info_stats {
+                .poke_info_stats_name {
+                }
+                .poke_info_stats_progressbar {
+                    p {
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+const colours = new Map([
+    ["normal", "rgba(168, 167, 122,1)"],
+    ["fire", "rgba(238, 130, 48,1"],
+    ["water", "rgba(99, 144, 240,1)"],
+    ["electric", "rgba(247, 206, 44,1)"],
+    ["grass", "rgba(121, 199, 76,1)"],
+    ["ice", "rgba(150, 217, 214,1)"],
+    ["fighting", "rgba(194, 45, 40,1)"],
+    ["poison", "rgba(163, 62, 161,1)"],
+    ["ground", "rgba(226, 190, 101,1)"],
+    ["flying", "rgba(171, 144, 243,1)"],
+    ["psychic", "rgba(249, 83, 133,1)"],
+    ["bug", "rgba(165, 183, 26,1)"],
+    ["rock", "rgba(181, 160, 54,1)"],
+    ["ghost", "rgba(116, 87, 152,1)"],
+    ["dragon", "rgba(110, 54, 252,1)"],
+    ["dark", "rgba(113, 88, 71,1)"],
+    ["steel", "rgba(182, 182, 205, 1)"],
+    ["fairy", "rgba(214, 133, 173,1)"],
+]);
+
+// const colours = {
+//     normal: "#A8A77A",
+//     fire: "#EE8130",
+//     water: "#6390F0",
+//     electric: "#F7D02C",
+//     grass: "#7AC74C",
+//     ice: "#96D9D6",
+//     fighting: "#C22E28",
+//     poison: "#A33EA1",
+//     ground: "#E2BF65",
+//     flying: "#A98FF3",
+//     psychic: "#F95587",
+//     bug: "#A6B91A",
+//     rock: "#B6A136",
+//     ghost: "#735797",
+//     dragon: "#6F35FC",
+//     dark: "#705746",
+//     steel: "#B7B7CE",
+//     fairy: "#D685AD",
+// };
+
+export default colours;

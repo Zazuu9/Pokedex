@@ -1,0 +1,6 @@
+@import "../../styles/styles.scss";
+
+.app_container {
+    @include Flex_Center_Center;
+    width: 100%;
+}
