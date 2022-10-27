@@ -11,7 +11,6 @@ const PokemonList = () => {
     useEffect(() => {
         const fetchPokemon = async () => {
             await axios.get("https://pokeapi.co/api/v2/pokemon?limit=898&offest=0").then((res) => {
-                // console.log(res);
                 setPokemons(res.data.results);
             });
             setIsLoading(false);

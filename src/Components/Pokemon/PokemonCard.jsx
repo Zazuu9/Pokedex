@@ -19,7 +19,7 @@ const PokemonCard = (pokemon) => {
             });
         };
         loadIdPokemon();
-    }, [pokemonUrl, pokemonId]);
+    }, []);
 
     const pokemonType = pokemonTypes.map((type) => type.type.name);
     // console.log(pokemonType);
