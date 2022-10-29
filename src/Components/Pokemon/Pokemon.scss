@@ -20,6 +20,9 @@
             margin-left: 10px;
             width: 95%;
             .back_arrow {
+                position: absolute;
+                top: 60px;
+                left: 20%;
                 font-size: 28px;
             }
         }
@@ -37,7 +40,7 @@
         .poke_info_sprite {
             width: 350px;
         }
-        .normal_btn {
+        .normal_shiny_btn {
             font-size: 19px;
             font-weight: bold;
             padding: 5px 10px;
@@ -45,17 +48,17 @@
             border-radius: 8px;
             margin-top: 30px;
             cursor: pointer;
+            transition: 0.5s;
+            &:hover {
+                transform: scale(1.12);
+                transition: 0.3s;
+            }
+        }
+        .normal_btn {
             background-color: #3c4144;
             color: white;
         }
         .shiny_btn {
-            font-size: 19px;
-            font-weight: bold;
-            padding: 5px 10px;
-            border: 0px;
-            border-radius: 8px;
-            margin-top: 30px;
-            cursor: pointer;
             color: black;
             background-image: linear-gradient(
                 to right,
@@ -174,9 +177,21 @@
     }
 }
 
+@media screen and (max-width: 1230px) {
+    .main {
+        .poke_info {
+        }
+    }
+}
+
 @media screen and (max-width: 780px) {
     .main {
         .poke_info {
+            .poke_info_back {
+                .back_arrow {
+                    left: 50px;
+                }
+            }
             .poke_info_stats {
                 width: 70%;
                 .poke_info_stats_progressbar {
@@ -196,6 +211,11 @@
         width: 100%;
         .poke_info {
             width: 100%;
+            .poke_info_back {
+                .back_arrow {
+                    left: 10px;
+                }
+            }
             .poke_info_sprite {
                 width: 70%;
             }

@@ -22,7 +22,6 @@ const PokemonCard = (pokemon) => {
     }, []);
 
     const pokemonType = pokemonTypes.map((type) => type.type.name);
-    // console.log(pokemonType);
 
     const colorType1 = colours.get(pokemonType[0]);
     const colorType2 = colours.get(pokemonType[1]);

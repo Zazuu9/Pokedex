@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Header from "../Header/Header";
 import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -154,6 +155,7 @@ const Pokemon = () => {
         axios.get(`https://pokeapi.co/api/v2/pokemon-species/${idPokemon}`).then((res) => {
             const urlChain = res.data.evolution_chain.url;
             axios.get(`${urlChain}`).then((res) => {
+                console.log(res);
                 const evolution = res.data.chain.species.name;
                 axios.get(`https://pokeapi.co/api/v2/pokemon/${evolution}`).then((res) => {
                     setEvolutionName1({
@@ -269,8 +271,6 @@ const Pokemon = () => {
     const colorType1 = colours.get(pokemonType[0]);
     const colorType2 = colours.get(pokemonType[1]);
 
-    // const [normalBtn, setNormalBtn] = useState(false);
-    // const [shinyBtn, setShinyBtn] = useState(false);
     const [getSprite, setGetSprites] = useState("View Shiny");
     function normalSprite() {
         let IMG = document.getElementById("images").getAttribute("src");
@@ -279,7 +279,6 @@ const Pokemon = () => {
             setGetSprites("View Shiny");
         } else {
             document.getElementById("images").src = `${spritesShiny}`;
-
             setGetSprites("View Normal");
         }
     }
@@ -291,6 +290,7 @@ const Pokemon = () => {
             </Helmet>
             <div className="bg"></div>
             <div className="poke_info">
+                <Header />
                 <Link to={"/"} className="poke_info_back">
                     <div>
                         <FontAwesomeIcon icon={faArrowLeft} className="back_arrow" />
@@ -301,15 +301,12 @@ const Pokemon = () => {
                     <h2 className="poke_info_id">#{pokemonInfo.id.toString().padStart(3, "0")}</h2>
                 </div>
                 <img id="images" src={sprites} alt="" className="poke_info_sprite" />
-                {/* <button className="normal_shiny_btn" onClick={normalSprite}>
-                    {getSprite === "View Normal" ? "View Normal" : "View Shiny"}
-                </button> */}
                 {getSprite === "View Normal" ? (
-                    <button onClick={normalSprite} className="normal_btn">
+                    <button onClick={normalSprite} className="normal_btn normal_shiny_btn">
                         View Normal
                     </button>
                 ) : (
-                    <button onClick={normalSprite} className="shiny_btn">
+                    <button onClick={normalSprite} className="shiny_btn normal_shiny_btn">
                         View Shiny
                     </button>
                 )}

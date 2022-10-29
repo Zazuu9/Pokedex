@@ -1,10 +1,11 @@
 @import "../../styles/styles.scss";
 
 #root {
-    @include Flex_Center_Center;
     background-color: #232627;
+
     .all_card {
         @include Flex_Wrap_Center;
+        margin-left: 10%;
         width: 80%;
     }
 }
