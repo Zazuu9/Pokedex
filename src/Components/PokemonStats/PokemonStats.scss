@@ -1,0 +1,16 @@
+@import "../../styles/styles.scss";
+
+.poke_info_stats {
+    .poke_info_stats_abilities {
+        display: flex;
+    }
+    .poke_info_stats_pokemon {
+        .poke_info_stats_pokemon_1 {
+            @include Flex_SpaceBetween_Center;
+            .poke_info_stats_pokemon_1_name {
+            }
+            .poke_info_stats_pokemon_1_number {
+            }
+        }
+    }
+}

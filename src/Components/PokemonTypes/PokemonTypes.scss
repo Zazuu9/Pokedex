@@ -1,0 +1,13 @@
+@import "../../styles/styles.scss";
+
+.card_type {
+    @include Flex_Center_Center;
+    .type {
+        padding: 5px 10px;
+        border-radius: 8px;
+        margin: 15px 10px;
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+}
