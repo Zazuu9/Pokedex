@@ -2,10 +2,13 @@
 
 .card_type {
     @include Flex_Center_Center;
+    height: 100%;
+    margin: 10px;
     .type {
         padding: 5px 10px;
         border-radius: 8px;
         margin: 15px 10px;
+        font-size: 22px;
         &::first-letter {
             text-transform: uppercase;
         }

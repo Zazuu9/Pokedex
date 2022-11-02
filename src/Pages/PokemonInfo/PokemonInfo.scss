@@ -1,8 +1,15 @@
 @import "../../styles/styles.scss";
 
 .main {
-    @include Flex_Center_Center;
+    @include Flex_Column_Center_Center;
     color: white;
+    .back_to_main {
+        transition: 0.5s;
+        &:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+    }
     .poke_info {
         @include Flex_Column_Center_Center;
         .poke_info_header {
@@ -12,12 +19,12 @@
                     text-transform: uppercase;
                 }
             }
-            .poke_info_header_id {
-            }
             .poke_info_header_sprite {
                 width: 300px;
             }
             .btn {
+                margin-top: 40px;
+                margin-bottom: 10px;
                 font-size: 22px;
                 font-weight: bold;
                 padding: 6px 12px;
@@ -71,7 +78,7 @@
         }
         .poke_info_evolution {
             @include Flex_Wrap_Center;
-            width: 70%;
+            margin-top: 20px;
             .evolution {
                 margin: 10px;
                 @include Flex_Column_Center;

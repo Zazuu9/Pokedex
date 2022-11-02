@@ -12,7 +12,7 @@ const PokemonList = () => {
 
     useEffect(() => {
         (async () => {
-            const pokemon = await PokemonService.getPokemons(0, 1);
+            const pokemon = await PokemonService.getPokemons(0, 898);
             setPokemons(pokemon.results);
             setIsLoading(false);
         })();

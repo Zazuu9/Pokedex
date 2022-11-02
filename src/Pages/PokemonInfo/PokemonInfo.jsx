@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck, faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import PokemonStats from "../../Components/PokemonStats/PokemonStats";
@@ -10,6 +10,7 @@ import PokemonTypes from "../../Components/PokemonTypes/PokemonTypes";
 import PokemonService from "../../Services/PokemonService";
 
 import "./PokemonInfo.scss";
+import Header from "../../Components/Header/Header";
 
 const Pokemon = () => {
     const url = window.location;
@@ -38,7 +39,7 @@ const Pokemon = () => {
         (async () => {
             // Get pokemon species
             const pokemonSpecies = await PokemonService.getPokemonSpeciesByPokemonName(pokemonInfo.name);
-            console.log(pokemonSpecies);
+            // console.log(pokemonSpecies);
             setPokemonInfoSpecies({
                 legendary: pokemonSpecies.is_legendary,
                 mythical: pokemonSpecies.is_mythical,
@@ -93,11 +94,17 @@ const Pokemon = () => {
             {!isLoading ? (
                 <div className="main">
                     <Helmet>
-                        <title>{pokemonInfo.name} | Pokedex App</title>
+                        <title>
+                            {pokemonInfo.name.charAt(0).toUpperCase() + pokemonInfo.name.slice(1).replaceAll("-", " ")}{" "}
+                            | Pokedex App
+                        </title>
                     </Helmet>
+                    <Link to="/" className="back_to_main">
+                        <Header />
+                    </Link>
                     <div className="poke_info">
                         <div className="poke_info_header">
-                            <h1 className="poke_info_header_name">{pokemonInfo.name}</h1>
+                            <h1 className="poke_info_header_name">{pokemonInfo.name.replaceAll("-", " ")}</h1>
                             <h2 className="poke_info_header_id">{`#${pokemonInfo.id.toString().padStart(3, "0")}`}</h2>
                             <img
                                 src={
@@ -159,7 +166,6 @@ const Pokemon = () => {
                             </div>
                         </div>
                         <PokemonStats stats={pokemonInfo.stats} abilities={pokemonInfo.abilities} />
-                        <h2 className="poke_info_evolution_title">Evolutions :</h2>
                         <div className="poke_info_evolution">
                             {chainEvolutions === undefined
                                 ? ""

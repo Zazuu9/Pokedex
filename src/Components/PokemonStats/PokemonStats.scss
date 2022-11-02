@@ -1,16 +1,17 @@
 @import "../../styles/styles.scss";
 
 .poke_info_stats {
-    .poke_info_stats_abilities {
-        display: flex;
-    }
+    width: 100%;
     .poke_info_stats_pokemon {
         .poke_info_stats_pokemon_1 {
             @include Flex_SpaceBetween_Center;
-            .poke_info_stats_pokemon_1_name {
-            }
-            .poke_info_stats_pokemon_1_number {
-            }
+            margin: 0px 5%;
         }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .poke_info_stats {
+        margin: 0px 5%;
     }
 }

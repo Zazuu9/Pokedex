@@ -23,31 +23,29 @@ const PokemonCard = ({ id }) => {
     };
 
     return (
-        <div>
-            <Link to={`pokemon/${id}`}>
-                {!isLoading ? (
-                    <article
-                        id="card"
-                        style={{ border: `solid 2px ${extractColorTypeByName(pokemon.types[0].type.name)}` }}
-                    >
-                        <div className="card_header">
-                            <h3 style={{ backgroundColor: extractColorTypeByName(pokemon.types[0].type.name) }}>
-                                {`#${id.toString().padStart(3, "0")}`}
-                            </h3>
-                        </div>
-                        <div className="card_body">
-                            <img src={pokemon.sprites.other.home.front_default} alt="" className="card_sprites" />
-                        </div>
-                        <div className="card_title">
-                            <h2>{pokemon.name}</h2>
-                        </div>
-                        <PokemonTypes types={pokemon.types} />
-                    </article>
-                ) : (
-                    "non"
-                )}
-            </Link>
-        </div>
+        <Link to={`pokemon/${id}`}>
+            {!isLoading ? (
+                <article
+                    id="card"
+                    style={{ border: `solid 2px ${extractColorTypeByName(pokemon.types[0].type.name)}` }}
+                >
+                    <div className="card_header">
+                        <h3 style={{ backgroundColor: extractColorTypeByName(pokemon.types[0].type.name) }}>
+                            {`#${id.toString().padStart(3, "0")}`}
+                        </h3>
+                    </div>
+                    <div className="card_body">
+                        <img src={pokemon.sprites.other.home.front_default} alt="" className="card_sprites" />
+                    </div>
+                    <div className="card_title">
+                        <h2>{pokemon.name.replaceAll("-", " ")}</h2>
+                    </div>
+                    <PokemonTypes types={pokemon.types} />
+                </article>
+            ) : (
+                ""
+            )}
+        </Link>
     );
 };
 

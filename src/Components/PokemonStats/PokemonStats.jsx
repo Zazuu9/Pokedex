@@ -3,14 +3,9 @@
 import React from "react";
 import "./PokemonStats.scss";
 
-function PokemonStats({ stats, abilities }) {
+function PokemonStats({ stats }) {
     return (
         <div className="poke_info_stats">
-            <div className="poke_info_stats_abilities">
-                {abilities.map(({ ability }) => (
-                    <h4 key={ability.name}>{ability.name}</h4>
-                ))}
-            </div>
             <div className="poke_info_stats_pokemon">
                 {stats.map((stat) => (
                     <div className="poke_info_stats_pokemon_1" key={stat.stat.name}>
